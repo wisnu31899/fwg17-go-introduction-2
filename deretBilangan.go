@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 // Struct untuk menyimpan deret bilangan
@@ -17,28 +16,34 @@ func DeretBilangan(limit int) *Deret {
 	}
 }
 
-// Method untuk mencetak deret bilangan prima
-func (d *Deret) Prima() {
-	fmt.Print("Deret bilangan prima: ")
-	for i := 2; i <= d.Limit; i++ {
-		if isPrima(i) {
-			fmt.Print(i, " ")
-		}
-	}
-	fmt.Println()
-}
-
 // Fungsi bantu untuk mengecek bilangan prima
-func isPrima(n int) bool {
+func isPrime(n int) bool {
 	if n <= 1 {
 		return false
 	}
-	for i := 2; i <= int(math.Sqrt(float64(n))); i++ {
-		if n%i == 0 {
+	if n <= 3 {
+		return true
+	}
+	if n%2 == 0 || n%3 == 0 {
+		return false
+	}
+	for i := 5; i*i <= n; i = i + 6 {
+		if n%i == 0 || n%(i+2) == 0 {
 			return false
 		}
 	}
 	return true
+}
+
+// Method untuk mencetak deret bilangan prima
+func (d *Deret) Prima() {
+	fmt.Print("Deret bilangan prima: ")
+	for i := 2; i <= d.Limit; i++ {
+		if isPrime(i) {
+			fmt.Print(i, " ")
+		}
+	}
+	fmt.Println()
 }
 
 // Method untuk mencetak deret bilangan ganjil
