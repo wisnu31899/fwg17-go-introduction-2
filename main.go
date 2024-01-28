@@ -4,9 +4,10 @@ import "fmt"
 
 //soal 1
 // func main() {
-// 	fmt.Printf("%.2f\n", pembulatan(4.37))  // Output: 4.40
-// 	fmt.Printf("%.3f\n", pembulatan(4.32))  // Output: 4.30
-// 	fmt.Printf("%.4f\n", pembulatan(4.324)) // Output: 4.30
+// 	fmt.Printf("%.0f\n", pembulatan(4.37))  // Output: 4.4
+// 	fmt.Printf("%.1f\n", pembulatan(4.32))  // Output: 4.3
+// 	fmt.Printf("%.2f\n", pembulatan(4.324)) // Output: 4.30
+// 	fmt.Printf("%.3f\n", pembulatan(4.356)) // Output: 4.40
 // }
 
 // // soal 2
@@ -20,31 +21,22 @@ import "fmt"
 
 // soal 3
 func main() {
-	// Buat instance Balok
 	ukuranBalok := Balok{
 		Panjang: 3.0,
 		Lebar:   4.0,
 		Tinggi:  5.0,
 	}
-
-	// Panggil metode cetak dari instance Balok
 	cetakInfo(ukuranBalok, "Balok")
 
-	// Buat instance Kubus
 	ukuranKubus := Kubus{
 		Sisi: 2.0,
 	}
-
-	// Panggil metode cetak dari instance Kubus
 	cetakInfo(ukuranKubus, "Kubus")
 
-	// Buat instance Tabung
 	ukuranTabung := Tabung{
 		JariJari: 2.0,
 		Tinggi:   5.0,
 	}
-
-	// Panggil metode cetak dari instance Tabung
 	cetakInfo(ukuranTabung, "Tabung")
 }
 

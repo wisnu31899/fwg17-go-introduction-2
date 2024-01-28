@@ -17,7 +17,7 @@ func DeretBilangan(limit int) *Deret {
 }
 
 // Fungsi bantu untuk mengecek bilangan prima
-func isPrime(n int) bool {
+func isPrima(n int) bool {
 	if n <= 1 {
 		return false
 	}
@@ -39,7 +39,7 @@ func isPrime(n int) bool {
 func (d *Deret) Prima() {
 	fmt.Print("Deret bilangan prima: ")
 	for i := 2; i <= d.Limit; i++ {
-		if isPrime(i) {
+		if isPrima(i) {
 			fmt.Print(i, " ")
 		}
 	}
